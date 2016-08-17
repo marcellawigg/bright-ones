@@ -24,11 +24,12 @@
     <% @ideas.each do |idea| %>
     <div class="any-idea">
       <div class="created-idea" data-idea-id = "<%= idea.id %>" id="idea">
-        <ul id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><strong>Title: </strong><%=idea.title  %></ul>
-        <ul id="idea-body-show" idea-body-id = "<%=idea.id %>" contentEditable="true"><strong>Body: </strong><%=idea.truncate_body  %></ul>
-        <ul id="idea-quality-show" idea-body-id = "<%=idea.id %>">Quality: <%=idea.quality  %></ul>
-        <ul><button id="plus-quality" type="button"> Thumbs Up </button>
-        <button id="minus-quality" type="button"> Thumbs Down </button></ul>
+        <strong>Title: </strong>
+        <ul id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><%=idea.title  %></ul>
+        <strong>Body: </strong><ul id="idea-body-show" data-body-id = "<%=idea.id %>" contentEditable="true"><%=idea.truncate_body  %></ul><br><strong>Quality: </strong>
+        <ul id="idea-quality-show" data-body-id = "<%=idea.id %>"> <%=idea.quality %></ul>
+        <ul><button id="plus-quality" type="button"> Up </button>
+        <button id="minus-quality" type="button"> Down </button></ul>
         <ul><div class="remove-button">
             <input type="submit" value="Delete">
           </div></ul>

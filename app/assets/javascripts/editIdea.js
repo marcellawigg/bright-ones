@@ -3,17 +3,18 @@ $(document).ready(function(){
   editBody()
 });
 
+
 function editTitle() {
 
-  $("#idea-title-show" ).on('blur keydown', function(event){
+  $("#idea-title-show").on('blur keydown', function(event){
     if (event.type ==="blur" || event.keyCode === 13) {
       editContent(this, {title: $(this).text(), id: $(this).data('title-id')})
     }
   })
 }
-
+//
 function editBody(){
-  $("#idea-body-show").on('blur keydown', function(event){
+  $(".all-ideas #idea-body-show").on('blur keydown', function(event){
     if (event.type === "blur" || event.keyCode === 13) {
       editContent(this, {body: $(this).text(), id: $(this).data('body-id')})
     }
