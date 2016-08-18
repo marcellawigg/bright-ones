@@ -2,10 +2,14 @@ require './test/test_helper'
 
   feature "Can edit an idea" do
     scenario "new idea can successfully save" do
+      idea = Idea.create(title: "Wonderful, wonderful", body: "Just so wonderful")
       visit root_path
-      fill_in "idea-title", with: "Gettysburg Address"
-      fill_in "idea-body", with: "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal."
-      click_on "Save"
-      assert_equal page.status_code, 200
+      find("#idea-title-info").click
+      find("#idea-title-info").native.send_keys("YO!")
+      find("#idea-body-info").click
+
+      visit root_path
+      assert page.has_content?("YO!")
+
     end
   end
