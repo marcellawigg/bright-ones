@@ -9,14 +9,21 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'faker'
 gem 'responders'
-gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sass-rails', '>= 3.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jquery-rails"
 gem 'jbuilder', '~> 2.5'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'uglifier'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 3.0'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -25,8 +32,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'byebug', platform: :mri
-  gem 'teaspoon'
-  gem 'teaspoon-mocha'
+  # gem 'teaspoon'
+  # gem 'teaspoon-mocha'
 end
 
 group :test do
