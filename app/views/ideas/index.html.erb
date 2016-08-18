@@ -1,45 +1,37 @@
+<h2 id="created-ideas-header">Create a New Idea:</h2>
+<div class="created-idea-form">
+  <form>
+
+    <fieldset class="form-group">
+      Idea Title:
+      <input id="idea-title" type="text" name:"Title:"><br>
+    </fieldset>
+    <fieldset class="form-group">
+      Idea Body: <input id="idea-body" type="text" name:"Body:"><br>
+    </fieldset>
+    <button id="submit-button" type="button">Save</button>
+  </form>
+</div>
+
+
 <div class="root-page">
-  <h2 id="new-ideas-header">Create a New Idea:</h2>
-  <div class="created-idea-form">
-    <form>
-
-      <fieldset class="form-group">
-        Idea Title:
-        <input id="idea-title" type="text" name:"Title:"><br>
-      </fieldset>
-      <fieldset class="form-group">
-        Idea Body: <input id="idea-body" type="text" name:"Body:"><br>
-      </fieldset>
-      <button id="submit-button" type="button">Save</button>
-    </form>
-  </div>
-
   <div class="landing-text">
   <h1 id="ideas-page-title">Bright Ideas</h1>
-  <div class="search">
-    <form>
-      <label for="search-ideas">Search</label>
-      <input type="text" id="search-ideas">
-    </form>
+  <div class="search-form">
+    <input class="search" type="text" name="search" placeholder="Search...">
   </div>
   <div class="all-ideas">
     <% @ideas.each do |idea| %>
     <div class="any-idea">
-      <p>
-
       <div class="created-idea" data-idea-id = "<%= idea.id %>" id="idea">
-        <ul>
-        <strong>Title: </strong>
-        <li id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><%=idea.title  %></li>
-        <strong>Body: </strong><li id="idea-body-show" data-body-id = "<%=idea.id %>" contentEditable="true"><%=idea.truncate_body  %></li><strong>Quality: </strong>
-        <li id="idea-quality-show"> <%=idea.quality %></li>
-        <button id="upgrade-quality" type="button"> Up </button>
-        <button id="downgrade-quality" type="button"> Down </button>
-        <div class="remove-button">
+        <ul id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><strong>Title: </strong><%=idea.title  %></ul>
+        <ul id="idea-body-show" idea-body-id = "<%=idea.id %>" contentEditable="true"><strong>Body: </strong><%=idea.truncate_body  %></ul>
+        <ul id="idea-quality-show" idea-body-id = "<%=idea.id %>">Quality: <%=idea.quality  %></ul>
+        <ul><button id="plus-quality" type="button"> Thumbs Up </button>
+        <button id="minus-quality" type="button"> Thumbs Down </button></ul>
+        <ul><div class="remove-button">
             <input type="submit" value="Delete">
-          </div>
-        </ul>
-        </p>
+          </div></ul>
       </div>
     </div>
     <% end %>
