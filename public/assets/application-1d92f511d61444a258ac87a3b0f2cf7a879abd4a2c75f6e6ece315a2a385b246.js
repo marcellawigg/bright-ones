@@ -11699,9 +11699,9 @@ var options =  {
         body: updatedContent.body
       },
       dataType: "json",
-      success: function(datum){
+      success: function(innfo){
       $('.user-flash').removeClass('hidden')
-      if (datum['response'] === 'successful') {
+      if (innfo['response'] === 'successful') {
         $('.user-flash').text('Successfully updated!')
       } else {
         $('.user-flash').text('Update unsuccessful.')

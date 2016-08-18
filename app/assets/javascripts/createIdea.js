@@ -19,12 +19,4 @@ function createIdea(){
 };
 
 function generateIdea(idea){
-  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-show" idea-title-id =' +
-  idea.id +' contentEditable="true">' + 'Title: ' +idea.title +
-  '</ul><ul id="idea-info" idea-body-id =' + idea.id +
-  ' contentEditable="true">' + 'Body: ' + idea.body + '</ul><ul>Quality: ' + idea.quality  +
-  '</ul><ul><button id="plus-quality" type="button"> Thumbs Up </button>' +
-  '<button id="minus-quality" type="button"> Thumbs Down </button></ul>' +
-  '<ul><div class="remove-button"><input type="submit" value="Delete">' +
-  '</div></ul></div>')
-}
+  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-show" idea-title-i
