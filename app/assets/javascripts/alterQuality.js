@@ -4,7 +4,7 @@ $(document).ready(function(){
   });
 
 function upgradeQuality(){
-  $('.any-idea').delegate('#plus-quality', 'click', function(){
+  $('.any-idea').delegate('#upgrade-quality', 'click', function(){
     var id = $(this).closest('#idea').data('idea-id')
     var closestIdea = $(this).closest('#idea')
   $.ajax({
@@ -20,7 +20,7 @@ function upgradeQuality(){
 }
 
 function downgradeQuality(){
-  $('.any-idea').delegate('#minus-quality', 'click', function(){
+  $('.any-idea').delegate('#downgrade-quality', 'click', function(){
     var id = $(this).closest('#idea').data('idea-id')
     var closestIdea = $(this).closest('#idea')
   $.ajax({
