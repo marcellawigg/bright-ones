@@ -4,7 +4,7 @@ $(document).ready(function(){
   });
 
 function upgradeQuality(){
-  $('.any-idea').delegate('#plus-quality', 'click', function(){
+  $('.any-idea').delegate('#upgrade-quality', 'click', function(){
     var id = $(this).closest('#idea').data('idea-id')
     var closestIdea = $(this).closest('#idea')
   $.ajax({
@@ -13,14 +13,14 @@ function upgradeQuality(){
     data: {changeValue: "increase"},
     dataType: "json",
     success: function(data){
-    closestIdea.find('#idea-quality-show').text('Quality: ' + data.quality)
+    closestIdea.find('#idea-quality-show').text(data.quality)
     }
     })
 })
 }
 
 function downgradeQuality(){
-  $('.any-idea').delegate('#minus-quality', 'click', function(){
+  $('.any-idea').delegate('#downgrade-quality', 'click', function(){
     var id = $(this).closest('#idea').data('idea-id')
     var closestIdea = $(this).closest('#idea')
   $.ajax({
@@ -29,7 +29,7 @@ function downgradeQuality(){
     data: {changeValue: "decrease"},
     dataType: "json",
     success: function(data){
-    closestIdea.find('#idea-quality-show').text('Quality: ' + data.quality)
+    closestIdea.find('#idea-quality-show').text(data.quality)
     }
     })
 })
