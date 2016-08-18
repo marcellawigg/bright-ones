@@ -1,10 +1,10 @@
 $(document).ready(function(){
-  editTitle()
-  editBody()
+  updateTitle()
+  updateBody()
 });
 
 
-function editTitle() {
+function updateTitle() {
 
   $("#idea-title-show").on('blur keydown', function(event){
     if (event.type ==="blur" || event.keyCode === 13) {
@@ -13,7 +13,7 @@ function editTitle() {
   })
 }
 //
-function editBody(){
+function updateBody(){
   $(".all-ideas #idea-body-show").on('blur keydown', function(event){
     if (event.type === "blur" || event.keyCode === 13) {
       editContent(this, {body: $(this).text(), id: $(this).data('body-id')})
