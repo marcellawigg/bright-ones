@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Introduction
 
-Things you may want to cover:
+Bright-Ideas is a project involving jQuery primarily, for Turing School module 4. It's based on previous lessons on building and testing an API, using jQuery in your projects, and testing jQuery. I focused primarily on the backend aspect of this project, and thus the look of it is simple.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Development
