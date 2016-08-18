@@ -10,7 +10,7 @@ class Api::V1::IdeasController < ApplicationController
   end
 
   def update
-    idea = Idea.find(params[:id])
+    idea = Idea.find(params['id'])
     if params[:changeValue]
       idea.quality = idea.change_quality(params[:changeValue])
       idea.save
