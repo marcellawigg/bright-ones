@@ -1,11 +1,10 @@
 $(document).ready(function(){
-  updateTitle()
-  updateBody()
+  updateTitle();
+  updateBody();
 });
 
 
 function updateTitle() {
-
   $("#idea-title-info").on('blur keydown', function(event){
     if (event.type ==="blur" || event.keyCode === 13) {
       editContent(this, {title: $(this).text(), id: $(this).data('title-id')});
