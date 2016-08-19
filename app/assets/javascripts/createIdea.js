@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  createIdea()
+  createIdea();
 });
 
 function createIdea(){
@@ -19,12 +19,5 @@ function createIdea(){
 };
 
 function generateIdea(idea){
-  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-info" idea-title-id =' +
-  idea.id +' contentEditable="true">' + 'Title: ' +idea.title +
-  '</ul><ul id="idea-info" idea-body-id =' + idea.id +
-  ' contentEditable="true">' + 'Body: ' + idea.body + '</ul><ul>Quality: ' + idea.quality  +
-  '</ul><ul><button id="upgrade-quality" type="button"> Thumbs Up </button>' +
-  '<button id="downgrade-quality" type="button"> Thumbs Down </button></ul>' +
-  '<ul><div class="remove-button"><input type="submit" value="Delete">' +
-  '</div></ul></div>')
+  $('.all-ideas').prepend('<div class="any-idea"><p><div class="created-idea" data-idea-id = ' + idea.id + ' id="idea"><ul><strong>Title: </strong><li id="idea-title-info" data-title-id = ' + idea.id + ' contentEditable="true">' + idea.title  + '</li><strong>Body: </strong><li id="idea-body-info" data-body-id = ' + idea.id + ' contentEditable="true">' + idea.body + '</li><strong>Quality: </strong><li id="idea-quality-show">' + idea.quality + '</li><button id="upgrade-quality" type="button"> Up </button> <button id="downgrade-quality" type="button"> Down </button><div class="remove-button"><input type="submit" value="Delete"></div></ul></p></div></div>');
 }
