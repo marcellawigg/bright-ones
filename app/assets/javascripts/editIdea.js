@@ -22,7 +22,7 @@ function updateBody(){
 }
 
 function editContent(elementHTML, updatedContent){
-var options =  {
+  $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + updatedContent.id,
     data: {
@@ -30,7 +30,7 @@ var options =  {
         body: updatedContent.body
       },
       dataType: "json",
-      success: function(innfo){
+      success: function(info){
       $('.user-flash').removeClass('hidden')
       if (info['response'] === 'successful') {
         $('.user-flash').text('Successfully updated!')
@@ -38,6 +38,5 @@ var options =  {
         $('.user-flash').text('Update unsuccessful.')
       }
     }
-  }
-  $.ajax(options)
+  })
 }
