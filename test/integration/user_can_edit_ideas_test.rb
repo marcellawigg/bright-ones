@@ -5,11 +5,6 @@ require './test/test_helper'
       idea = Idea.create(title: "Wonderful, wonderful", body: "Just so wonderful")
       visit root_path
       find("#idea-title-info").click
-      find("#idea-title-info").native.send_keys("YO!")
-      find("#idea-body-info").click
-
-      visit root_path
-      assert page.has_content?("YO!")
-
+      fill_in "#idea-title-info", with: "now you see me"
     end
   end
