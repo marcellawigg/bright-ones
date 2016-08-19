@@ -5,7 +5,6 @@ $(document).ready(function(){
 function search(){
   $("#search-ideas").on('keyup', function(){
     var searchRequest = $(this).val().toLowerCase();
-    console.log(searchRequest);
 
     $(".all-ideas .any-idea").each(function(index, idea){
 
