@@ -1,26 +1,25 @@
 $(document).ready(function(){
-  $( "#idea_search" ).keydown(function(e){
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      return;
-    }
-  })
-
-  $( "#idea_search" ).keyup(function(e) {
-    $('.idea').each(function(){
-      var searchStr = $('#idea_search').val().toLowerCase();
-      var title = this.children[0].children[0].innerHTML.toLowerCase();
-      var body = this.children[5].innerHTML.toLowerCase();
-      if (searchMatch(title, body, searchStr)) {
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
-    });
-  });
-
-  function searchMatch(title, body, searchStr) {
-    return title.indexOf(searchStr) !== -1 || body.indexOf(searchStr) !== -1;
-  }
-
+  search()
 });
+
+function search(){
+  $("#search-ideas").on('keyup', function(){
+    var searchRequest = $(this).val().toLowerCase();
+    console.log(searchRequest);
+
+    $(".all-ideas .any-idea").each(function(index, idea){
+
+      var title = $(this).find("ul li").first().text().toLowerCase();
+      var body = $(this).find("ul li").text().toLowerCase();
+
+      var containedAnywhere = title.indexOf(searchRequest) !== -1 || body.indexOf(searchRequest) !== -1
+
+      if (containedAnywhere){
+        $(idea).show();
+      }
+      else {
+        $(idea).hide();
+      }
+    })
+  });
+}

@@ -14,12 +14,13 @@
     </form>
   </div>
 
+
   <div class="landing-text">
   <h1 id="ideas-page-title">Bright Ideas</h1>
   <div class="search">
     <form>
-      <label for="idea_search">Search</label>
-      <input type="text" id="idea_search">
+      <label for="search-ideas">Search</label>
+      <input type="text" id="search-ideas">
     </form>
   </div>
   <div class="all-ideas">
@@ -28,15 +29,17 @@
       <p>
 
       <div class="created-idea" data-idea-id = "<%= idea.id %>" id="idea">
+        <ul>
         <strong>Title: </strong>
-        <ul id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><%=idea.title  %></ul>
-        <strong>Body: </strong><ul id="idea-body-show" data-body-id = "<%=idea.id %>" contentEditable="true"><%=idea.truncate_body  %></ul><br><strong>Quality: </strong>
-        <ul id="idea-quality-show" data-body-id = "<%=idea.id %>"> <%=idea.quality %></ul>
-        <ul><button id="upgrade-quality" type="button"> Up </button>
-        <button id="downgrade-quality" type="button"> Down </button></ul>
-        <ul><div class="remove-button">
+        <li id="idea-title-show" data-title-id = "<%= idea.id %>" contentEditable="true"><%=idea.title  %></li>
+        <strong>Body: </strong><li id="idea-body-show" data-body-id = "<%=idea.id %>" contentEditable="true"><%=idea.truncate_body  %></li><strong>Quality: </strong>
+        <li id="idea-quality-show"> <%=idea.quality %></li>
+        <button id="upgrade-quality" type="button"> Up </button>
+        <button id="downgrade-quality" type="button"> Down </button>
+        <div class="remove-button">
             <input type="submit" value="Delete">
-          </div></ul>
+          </div>
+        </ul>
         </p>
       </div>
     </div>
