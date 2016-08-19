@@ -11140,17 +11140,17 @@ return jQuery;
         dataType = element.data('type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 
         if (element.is('form')) {
-          method = element.data('ujs:submit-button-formmethod') || element.attr('method');
-          url = element.data('ujs:submit-button-formaction') || element.attr('action');
+          method = element.data('ujs:save-idea-button-formmethod') || element.attr('method');
+          url = element.data('ujs:save-idea-button-formaction') || element.attr('action');
           data = $(element[0]).serializeArray();
           // memoized value from clicked submit button
-          var button = element.data('ujs:submit-button');
+          var button = element.data('ujs:save-idea-button');
           if (button) {
             data.push(button);
-            element.data('ujs:submit-button', null);
+            element.data('ujs:save-idea-button', null);
           }
-          element.data('ujs:submit-button-formmethod', null);
-          element.data('ujs:submit-button-formaction', null);
+          element.data('ujs:save-idea-button-formmethod', null);
+          element.data('ujs:save-idea-button-formaction', null);
         } else if (element.is(rails.inputChangeSelector)) {
           method = element.data('method');
           url = element.data('url');
@@ -11558,12 +11558,12 @@ return jQuery;
       if (form.length === 0) {
         form = $('#' + button.attr('form'));
       }
-      form.data('ujs:submit-button', data);
+      form.data('ujs:save-idea-button', data);
 
       // Save attributes from button
       form.data('ujs:formnovalidate-button', button.attr('formnovalidate'));
-      form.data('ujs:submit-button-formaction', button.attr('formaction'));
-      form.data('ujs:submit-button-formmethod', button.attr('formmethod'));
+      form.data('ujs:save-idea-button-formaction', button.attr('formaction'));
+      form.data('ujs:save-idea-button-formmethod', button.attr('formmethod'));
     });
 
     $document.delegate(rails.formSubmitSelector, 'ajax:send.rails', function(event) {
@@ -11622,7 +11622,7 @@ $(document).ready(function(){
 });
 
 function createIdea(){
-  $('#submit-button').click(function(){
+  $('#save-idea-button').click(function(){
     var ideaParams = {title: $('#idea-title').val(), body: $('#idea-body').val()}
     $.ajax({
       type: "POST",

@@ -1,11 +1,11 @@
 $(document).ready(function(){
-  deleteIdea()
+  deleteIdea();
 });
 
 function deleteIdea(){
   $('.any-idea').delegate('.remove-button', 'click', function(){
-    var id = $(this).closest('#idea').data('idea-id')
-    var closestIdea = $(this).closest('#idea')
+    var id = $(this).closest('#idea').data('idea-id');
+    var closestIdea = $(this).closest('#idea');
 
   $.ajax({
     type: "DELETE",
@@ -15,5 +15,5 @@ function deleteIdea(){
     }
   });
   }
-  })
+);
 }

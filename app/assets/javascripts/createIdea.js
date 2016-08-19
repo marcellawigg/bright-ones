@@ -3,7 +3,7 @@ $(document).ready(function(){
 });
 
 function createIdea(){
-  $('#submit-button').click(function(){
+  $('#save-idea-button').click(function(){
     var ideaParams = {title: $('#idea-title').val(), body: $('#idea-body').val()};
     $.ajax({
       type: "POST",

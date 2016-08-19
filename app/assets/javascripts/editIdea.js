@@ -8,17 +8,17 @@ function updateTitle() {
 
   $("#idea-title-info").on('blur keydown', function(event){
     if (event.type ==="blur" || event.keyCode === 13) {
-      editContent(this, {title: $(this).text(), id: $(this).data('title-id')})
+      editContent(this, {title: $(this).text(), id: $(this).data('title-id')});
     }
-  })
+  });
 }
 //
 function updateBody(){
   $(".all-ideas #idea-body-info").on('blur keydown', function(event){
     if (event.type === "blur" || event.keyCode === 13) {
-      editContent(this, {body: $(this).text(), id: $(this).data('body-id')})
+      editContent(this, {body: $(this).text(), id: $(this).data('body-id')});
     }
-  })
+  });
 }
 
 function editContent(elementHTML, updatedContent){
@@ -31,12 +31,12 @@ function editContent(elementHTML, updatedContent){
       },
       dataType: "json",
       success: function(info){
-      $('.user-flash').removeClass('hidden')
-      if (info['response'] === 'successful') {
-        $('.user-flash').text('Successfully updated!')
+      $('.user-flash').removeClass('hidden');
+      if (info.response === 'successful') {
+        $('.user-flash').text('Successfully updated!');
       } else {
-        $('.user-flash').text('Update unsuccessful.')
+        $('.user-flash').text('Update unsuccessful.');
       }
     }
-  })
+  });
 }
