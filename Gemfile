@@ -22,8 +22,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'byebug', platform: :mri
-  # gem 'teaspoon'
-  # gem 'teaspoon-mocha'
+  gem 'teaspoon'
+  gem 'teaspoon-mocha'
 end
 
 group :test do
