@@ -32,7 +32,7 @@ var options =  {
       dataType: "json",
       success: function(innfo){
       $('.user-flash').removeClass('hidden')
-      if (innfo['response'] === 'successful') {
+      if (info['response'] === 'successful') {
         $('.user-flash').text('Successfully updated!')
       } else {
         $('.user-flash').text('Update unsuccessful.')
