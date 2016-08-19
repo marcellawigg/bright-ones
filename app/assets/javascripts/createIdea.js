@@ -19,7 +19,7 @@ function createIdea(){
 };
 
 function generateIdea(idea){
-  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-show" idea-title-id =' +
+  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-info" idea-title-id =' +
   idea.id +' contentEditable="true">' + 'Title: ' +idea.title +
   '</ul><ul id="idea-info" idea-body-id =' + idea.id +
   ' contentEditable="true">' + 'Body: ' + idea.body + '</ul><ul>Quality: ' + idea.quality  +
