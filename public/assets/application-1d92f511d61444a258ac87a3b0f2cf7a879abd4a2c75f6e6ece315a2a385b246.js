@@ -11595,7 +11595,7 @@ function upgradeQuality(){
     data: {changeValue: "increase"},
     dataType: "json",
     success: function(data){
-    closestIdea.find('#idea-quality-show').text(data.quality)
+    closestIdea.find('#idea-quality-info').text(data.quality)
     }
     })
 })
@@ -11611,7 +11611,7 @@ function downgradeQuality(){
     data: {changeValue: "decrease"},
     dataType: "json",
     success: function(data){
-    closestIdea.find('#idea-quality-show').text(data.quality)
+    closestIdea.find('#idea-quality-info').text(data.quality)
     }
     })
 })

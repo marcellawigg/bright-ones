@@ -19,7 +19,6 @@ class Idea < ActiveRecord::Base
     increase_quality(index)
   elsif data == "decrease"
     decrease_quality(index)
-  else
   end
 end
 
