@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 function createIdea(){
   $('#submit-button').on('click', function(){
-    var ideaParams = {title: $('#idea-title').val(), body: $('#idea-body').val()}
+    var ideaParams = {title: $('#idea-title').val(), body: $('#idea-body').val()};
     $.ajax({
       type: "POST",
       url: "api/v1/ideas",
