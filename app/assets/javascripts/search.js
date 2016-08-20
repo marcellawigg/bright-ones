@@ -1,6 +1,7 @@
 $(document).ready(function(){
-  search()
+  search();
 });
+
 
 function search(){
   $("#search-ideas").on('keyup', function(){
@@ -12,7 +13,7 @@ function search(){
       var title = $(this).find("ul li").first().text().toLowerCase();
       var body = $(this).find("ul li").text().toLowerCase();
 
-      var containedAnywhere = title.indexOf(searchRequest) !== -1 || body.indexOf(searchRequest) !== -1
+      var containedAnywhere = title.indexOf(searchRequest) !== -1 || body.indexOf(searchRequest) !== -1;
 
       if (containedAnywhere){
         $(idea).show();
@@ -20,6 +21,6 @@ function search(){
       else {
         $(idea).hide();
       }
-    })
+    });
   });
 }
