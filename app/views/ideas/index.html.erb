@@ -33,8 +33,8 @@
         <li id="idea-title-info" data-title-id = "<%= idea.id %>" contentEditable="true"><%=idea.title  %></li>
         <strong>Body: </strong><li id="idea-body-info" data-body-id = "<%=idea.id %>" contentEditable="true"><%=idea.body  %></li><strong>Quality: </strong>
         <li id="idea-quality-show"> <%=idea.quality %></li>
-        <button id="upgrade-quality" type="button"> Up </button>
-        <button id="downgrade-quality" type="button"> Down </button>
+        <button class="upgrade-quality" type="button"> Up </button>
+        <button class="downgrade-quality" type="button"> Down </button>
         <div class="remove-button">
             <input type="submit" value="Delete">
           </div>
