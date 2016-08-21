@@ -19,17 +19,17 @@ class IdeaTest < ActiveSupport::TestCase
     assert_equal "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore", idea.truncate_body
   end
 
-  test "increase quality returns a different variable depending on option" do
+  test "upgrade quality returns a different variable depending on option" do
     idea = Idea.create(title: "Hello", body: "Dolly", quality: 0)
     assert_equal "Swill", idea.quality
-    new_quality = idea.increase_quality(1)
+    new_quality = idea.upgrade_quality(1)
     assert_equal "Genius", new_quality
   end
 
-  test "decrease quality returns a different variable depending on option" do
+  test "downgrade quality returns a different variable depending on option" do
     idea = Idea.create(title: "Hello", body: "Dolly", quality: 2)
     assert_equal "Genius", idea.quality
-    new_quality = idea.decrease_quality(1)
+    new_quality = idea.downgrade_quality(1)
     assert_equal "Swill", new_quality
   end
 end

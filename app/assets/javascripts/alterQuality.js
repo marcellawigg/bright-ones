@@ -10,7 +10,7 @@ function upgradeQuality(){
   $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + id,
-    data: {changeValue: "increase"},
+    data: {delta: "upgrade"},
     dataType: "json",
     success: function(data){
     closestIdea.find('#idea-quality-show').text(data.quality);
@@ -26,7 +26,7 @@ function downgradeQuality(){
   $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + id,
-    data: {changeValue: "decrease"},
+    data: {delta: "downgrade"},
     dataType: "json",
     success: function(data){
     closestIdea.find('#idea-quality-show').text(data.quality);

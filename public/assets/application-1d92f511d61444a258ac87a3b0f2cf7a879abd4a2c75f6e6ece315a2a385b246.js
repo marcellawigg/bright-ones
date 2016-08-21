@@ -11592,7 +11592,7 @@ function upgradeQuality(){
   $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + id,
-    data: {changeValue: "increase"},
+    data: {delta: "upgrade"},
     dataType: "json",
     success: function(data){
     closestIdea.find('#idea-quality-show').text(data.quality)
@@ -11608,7 +11608,7 @@ function downgradeQuality(){
   $.ajax({
     type: "PATCH",
     url: "/api/v1/ideas/" + id,
-    data: {changeValue: "decrease"},
+    data: {delta: "downgrade"},
     dataType: "json",
     success: function(data){
     closestIdea.find('#idea-quality-show').text(data.quality)
@@ -11638,7 +11638,7 @@ function createIdea(){
 };
 
 function generateIdea(idea){
-  $('.all-ideas').prepend('<div class="created-idea"><ul id="idea-title-info" idea-title-id =' +
+  $('.all-ideas').prepend('<div class="created-idea"><ul class="idea-title-info" idea-title-id =' +
   idea.id +' contentEditable="true">' + 'Title: ' +idea.title +
   '</ul><ul id="idea-info" idea-body-id =' + idea.id +
   ' contentEditable="true">' + 'Body: ' + idea.body + '</ul><ul>Quality: ' + idea.quality  +
@@ -11675,7 +11675,7 @@ $(document).ready(function(){
 
 function updateTitle() {
 
-  $("#idea-title-info").on('blur keydown', function(event){
+  $(".idea-title-info").on('blur keydown', function(event){
     if (event.type ==="blur" || event.keyCode === 13) {
       editContent(this, {title: $(this).text(), id: $(this).data('title-id')})
     }
@@ -11683,7 +11683,7 @@ function updateTitle() {
 }
 //
 function updateBody(){
-  $(".all-ideas #idea-body-info").on('blur keydown', function(event){
+  $(".all-ideas .idea-body-info").on('blur keydown', function(event){
     if (event.type === "blur" || event.keyCode === 13) {
       editContent(this, {body: $(this).text(), id: $(this).data('body-id')})
     }

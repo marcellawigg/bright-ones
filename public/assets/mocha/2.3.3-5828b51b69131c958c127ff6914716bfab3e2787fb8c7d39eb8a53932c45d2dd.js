@@ -8076,7 +8076,7 @@ EventEmitter.prototype._maxListeners = undefined;
 EventEmitter.defaultMaxListeners = 10;
 
 // Obviously not all Emitters should be limited to 10. This function allows
-// that to be increased. Set to zero for unlimited.
+// that to be upgraded. Set to zero for unlimited.
 EventEmitter.prototype.setMaxListeners = function(n) {
   if (!isNumber(n) || n < 0 || isNaN(n))
     throw TypeError('n must be a positive number');
@@ -8181,7 +8181,7 @@ EventEmitter.prototype.addListener = function(type, listener) {
       this._events[type].warned = true;
       console.error('(node) warning: possible EventEmitter memory ' +
                     'leak detected. %d listeners added. ' +
-                    'Use emitter.setMaxListeners() to increase limit.',
+                    'Use emitter.setMaxListeners() to upgrade limit.',
                     this._events[type].length);
       if (typeof console.trace === 'function') {
         // not supported in IE 10

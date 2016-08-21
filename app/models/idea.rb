@@ -15,15 +15,15 @@ class Idea < ActiveRecord::Base
   def change_quality(data)
   quality_options = ["Swill", "Plausible", "Genius"]
   index = quality_options.index(self.quality)
-  if data == "increase"
-    increase_quality(index)
-  elsif data == "decrease"
-    decrease_quality(index)
+  if data == "upgrade"
+    upgrade_quality(index)
+  elsif data == "downgrade"
+    downgrade_quality(index)
   else
   end
 end
 
-def increase_quality(index)
+def upgrade_quality(index)
   quality_options = ["Swill", "Plausible", "Genius"]
   if index == 2
     new_quality = quality_options[index]
@@ -33,7 +33,7 @@ def increase_quality(index)
   new_quality
 end
 
-def decrease_quality(index)
+def downgrade_quality(index)
   quality_options = ["Swill", "Plausible", "Genius"]
   if index == 0
     new_quality = quality_options[index]
